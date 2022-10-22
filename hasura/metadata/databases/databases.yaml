@@ -1,1 +1,8 @@
-[]
+- name: app_db
+  kind: postgres
+  configuration:
+    connection_info:
+      use_prepared_statements: false
+      database_url: postgresql://postgres:postgres@postgres:5432/app_db
+      isolation_level: read-committed
+  tables: "!include app_db/tables/tables.yaml"
