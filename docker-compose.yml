@@ -29,6 +29,9 @@ services:
     ports:
       - "8080:8080"
   tf:
+    build:
+      context: .
+      dockerfile: ./terraform/Dockerfile
     image: hashicorp/terraform:1.2.1
     container_name: terraform_container
     tty: true
